@@ -1,2 +1,5 @@
 *.exe
 test.c
+*.html
+test.*
+*.json
