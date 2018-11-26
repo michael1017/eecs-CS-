@@ -23,16 +23,13 @@ void Swap(int k, int i)
 void Perm(int k, int n)
 {
     int i;
-    if(k==n-2){
-        show(n);
-        Swap(k,n-1);
-        show(n);
-        Swap(k,n-1);
-        return ;
-    }
     for(i=k;i<n;i++){
+        
         Swap(k,i);
         Perm(k+1,n);
+        if(k==n-2){
+            show(n);
+        }
         Swap(k,i);
     }
 }
@@ -43,6 +40,12 @@ int main(void)
     scanf("%d", &num);
     for(i=0; i<num; i++)
         list[i] = '1'+i;
-    Perm(0, num);
+    if(num==1){
+        printf("(1)\n");
+    }
+    else{
+        Perm(0, num);
+    }
+    
     return 0; 
 }
