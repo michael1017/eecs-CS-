@@ -5,7 +5,7 @@ int max(int ,int );
 int c,f,h;
 int s;
 char d;
-char map[55][55];
+char map[500][500];
 
 int main(void){    
     int i;
@@ -26,9 +26,9 @@ void draw(char dir, int pos,int height){
             map[i][pos] = '*';
             pos++;
         }
-        if(pos>c){
+        if(pos-1>c-1){
             map[0][pos] = '*';
-            show(pos);
+            show(max(max(c-1,f-1),pos));
         }
         else{
             draw('d',pos,2);
@@ -39,9 +39,9 @@ void draw(char dir, int pos,int height){
             map[i][pos] = '*';
             pos++;
         }
-        if(pos>f){
+        if(pos-1>f-1){
             map[h+1][pos] = '*';
-            show(pos);
+            show(max(max(c-1,f-1),pos));
         }
         else{
 

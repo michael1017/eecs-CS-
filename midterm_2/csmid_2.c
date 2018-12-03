@@ -10,8 +10,15 @@ void Print(int m, int n, int matrix[][500] ) {
 void Transpose( int* row, int* col, int matrix[][500] ){
     int temp;
     int i,j;
-    for(i=0;i<*row;i++){
-        for(j=0;j<*col;j++){
+    int max_num;    
+    if(*row>*col){
+        max_num = *row;
+    }
+    else{
+        max_num = *col;
+    }
+    for(i=0;i<max_num;i++){
+        for(j=i+1;j<max_num;j++){
             temp = matrix[i][j];
             matrix[i][j] = matrix[j][i];
             matrix[j][i] = temp;
@@ -20,7 +27,6 @@ void Transpose( int* row, int* col, int matrix[][500] ){
     temp = *row;
     *row = *col;
     *col = temp;
-    
 }
 int32_t main(){
     int matrix[500][500];

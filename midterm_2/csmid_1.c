@@ -5,8 +5,7 @@ int slen, tlen;
 int cases = 0;
 void comp(int ,int );
 int main(void){    
-    while(scanf(" %s",s)!=EOF){
-        scanf(" %s",t);
+    while(scanf(" %s %s",s,t)!=EOF){
         cases = 0;
         slen = strlen(s);
         tlen = strlen(t);
@@ -21,7 +20,7 @@ int main(void){
 }
 void comp(int start,int find){
     int i;
-    if(start>=slen || find>=tlen){
+    if(find>=tlen){
         cases++;
         return ;
     }
